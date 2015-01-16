@@ -246,8 +246,8 @@ public class FMRecordingService extends Service {
              Toast.makeText(this, "Not able to access SD Card", Toast.LENGTH_SHORT).show();
         }
         try {
-             Log.d(TAG, "AudioSource.FM_RX" +MediaRecorder.AudioSource.FM_RX);
-             mRecorder.setAudioSource(MediaRecorder.AudioSource.FM_RX);
+             Log.d(TAG, "AudioSource.FM_RX");
+             mRecorder.setAudioSource(10); // system/core/include/system/audio.h
              mRecorder.setOutputFormat(MediaRecorder.OutputFormat.THREE_GPP);
              mRecorder.setAudioEncoder(MediaRecorder.AudioEncoder.AAC);
              mAudioType = "audio/aac";

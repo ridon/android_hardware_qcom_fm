@@ -479,7 +479,7 @@ public class FMTransmitterService extends Service
              }
 
              Log.e(LOGTAG, "FMTx is on: Requesting to start FM TX");
-             AudioSystem.setDeviceConnectionState(AudioSystem.DEVICE_OUT_FM_TX,
+             AudioSystem.setDeviceConnectionState(0x1000000, // From system/core/include/system/audio.h
                                   AudioSystem.DEVICE_STATE_AVAILABLE, "");
          }
 
@@ -512,7 +512,7 @@ public class FMTransmitterService extends Service
       Log.d(LOGTAG, "fmOperationsOff" );
 
       Log.e(LOGTAG, "FMTx is off: Requesting to stop FM Tx");
-      AudioSystem.setDeviceConnectionState(AudioSystem.DEVICE_OUT_FM_TX,
+      AudioSystem.setDeviceConnectionState(0x1000000, // From system/core/include/system/audio.h
                            AudioSystem.DEVICE_STATE_UNAVAILABLE, "");
    }
    /*

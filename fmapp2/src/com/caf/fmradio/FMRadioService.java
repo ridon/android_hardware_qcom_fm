@@ -1034,7 +1034,7 @@ public class FMRadioService extends Service
            return false;
         }
         try {
-            mA2dp.setAudioSource(MediaRecorder.AudioSource.FM_RX_A2DP);
+            mA2dp.setAudioSource(11); // from system/core/include/system/audio.h
             mA2dp.setOutputFormat(MediaRecorder.OutputFormat.RAW_AMR);
             mA2dp.setAudioEncoder(MediaRecorder.OutputFormat.DEFAULT);
             File sampleDir = new File(getFilesDir().getAbsolutePath());
